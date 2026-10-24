@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cristal Inmobiliaria | Bienes raíces</title>
+<meta name="description" content="Te acompañamos a encontrar, comprar o rentar la propiedad que se adapta a tu forma de vivir.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={prefix:'tw-',corePlugins:{preflight:false}}</script>
+<style>
+
+html{scroll-behavior:smooth}
+body{margin:0;overflow-x:hidden;font-family:var(--font-b);background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+[hidden]{display:none!important}
+img{max-width:100%;display:block}
+section[id],header[id]{scroll-margin-top:84px}
+h1,h2,h3,h4,.brand{font-family:var(--font-h);font-weight:var(--h-weight);letter-spacing:var(--h-track,0);text-transform:var(--h-case,none);line-height:1.1;margin:0;color:var(--h-ink,inherit)}
+.h-display{font-size:clamp(2.4rem,6vw,4.75rem);line-height:1.04}
+.h-page{font-size:clamp(2.2rem,5vw,3.6rem)}
+.h-section{font-size:clamp(1.8rem,3.6vw,2.8rem);margin-bottom:1rem}
+.lead{font-size:1.15rem;line-height:1.65;color:var(--muted);max-width:56ch;font-weight:400}
+.muted{color:var(--muted)}
+.sec{padding:5.5rem 0;position:relative}
+.sec-tight{padding:2.5rem 0}
+.sec-head{max-width:640px;margin-bottom:2.5rem}
+.sec-head.center{margin-inline:auto;text-align:center}
+.sec-head.center .lead{margin-inline:auto}
+.page-head{padding:4.5rem 0 2.5rem;position:relative;overflow:hidden}
+.page-head.has-img{padding:6.5rem 0;color:#fff}
+.page-head.has-img .lead{color:#fff;opacity:.92}
+.hero{position:relative;overflow:hidden}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-shade{position:absolute;inset:0;background:var(--shade,linear-gradient(180deg,rgba(0,0,0,.4),rgba(0,0,0,.65)))}
+.hero-in,.cta-in{position:relative;z-index:2}
+.hero-center,.hero-left,.hero-bottom{color:#fff}
+.hero-center .lead,.hero-left .lead,.hero-bottom .lead{color:#fff;opacity:.92}
+.hero-center{padding:5rem 0;min-height:88vh;display:flex;align-items:center}
+.hero-center .container-xl{width:100%}
+.hero-left{padding:5rem 0;min-height:86vh;display:flex;align-items:center}
+.hero-bottom{min-height:92vh;display:flex;align-items:flex-end;padding:6rem 0 4rem}
+.hero-split{padding:4.5rem 0 3.5rem}
+.hero-poster{padding:4.5rem 0 3.5rem}
+.hero-center .btn-alt,.hero-left .btn-alt,.hero-bottom .btn-alt{color:var(--alt-hero-ink,#fff);border-color:var(--alt-hero-line,rgba(255,255,255,.7))}
+.media{position:relative}
+.media-img{width:100%;aspect-ratio:5/4;object-fit:cover;border-radius:var(--r-img,var(--r))}
+.floatcard{position:absolute;left:-1.5rem;bottom:2rem;padding:1rem 1.2rem;display:flex;gap:.8rem;align-items:center;max-width:280px}
+.floatcard i{font-size:1.8rem;color:var(--accent-text,var(--accent))}
+.floatcard span{display:block;font-size:.85rem;color:var(--muted)}
+.poster-img img{width:100%;height:clamp(260px,42vw,470px);object-fit:cover;border-radius:var(--r-img,var(--r))}
+.poster-search{position:relative;z-index:3;margin:-3.2rem 1.5rem 0}
+.search{padding:1.25rem}
+.lbl{display:block;font-size:.85rem;font-weight:600;margin-bottom:.35rem}
+.panel,.card-p,.svc,.tcard,.stat,.modal-content,.floatcard,.step{background:var(--surface);color:var(--surface-ink,var(--ink));border:var(--bw,1px) solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);-webkit-backdrop-filter:blur(var(--blur,0px));backdrop-filter:blur(var(--blur,0px))}
+.panel{padding:1.5rem}
+.modal-content{background:var(--modal-bg,var(--surface));overflow:hidden;padding:0}
+.btn-main,.btn-alt,.chip{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;cursor:pointer;font-family:var(--font-b);font-weight:600;line-height:1.1;text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s}
+.btn-main{background:var(--accent);color:var(--accent-ink);padding:.95rem 1.5rem;border-radius:var(--r-btn);box-shadow:var(--btn-shadow,none);border:var(--bw,0) solid var(--btn-line,transparent)}
+.btn-main:hover{transform:translateY(-2px)}
+.btn-alt{background:var(--alt-bg,transparent);color:var(--alt-ink,var(--ink));border:var(--bw,1px) solid var(--alt-line,var(--line));padding:.85rem 1.35rem;border-radius:var(--r-btn);box-shadow:var(--alt-shadow,none)}
+.btn-alt:hover{transform:translateY(-2px)}
+.field{width:100%;background:var(--field-bg,transparent);color:inherit;border:var(--bw,1px) solid var(--field-line,var(--line));border-radius:var(--r-sm);padding:.8rem 1rem;box-shadow:var(--field-shadow,none);font:inherit;outline:0}
+.field:focus{border-color:var(--accent)}
+select.field option{background:var(--opt-bg,#fff);color:var(--opt-ink,#111)}
+textarea.field{resize:vertical;min-height:120px}
+.field::placeholder{color:var(--muted);opacity:.8}
+.nav-x{padding:.8rem 0;background:var(--nav-bg,var(--bg));-webkit-backdrop-filter:blur(var(--nav-blur,0px));backdrop-filter:blur(var(--nav-blur,0px));border-bottom:var(--nav-border,0);box-shadow:var(--nav-shadow,none);z-index:1030}
+.brand{display:inline-flex;align-items:center;gap:.6rem;font-size:1.35rem;color:var(--ink)}
+.brand i{color:var(--accent-text,var(--accent))}
+.navlink{padding:.5rem .9rem!important;color:var(--ink)!important;opacity:.82;border-radius:var(--r-btn);font-weight:500}
+.navlink:hover,.navlink.active{opacity:1;color:var(--nav-active,var(--accent-text,var(--accent)))!important}
+.navbar-toggler{border:0;padding:.3rem .6rem;font-size:1.8rem;line-height:1;color:var(--ink)}
+.navbar-toggler:focus{box-shadow:none}
+@media(max-width:991.98px){.navbar-collapse{background:var(--menu-bg,var(--surface));color:var(--surface-ink,var(--ink));border:var(--bw,1px) solid var(--line);border-radius:var(--r);padding:1rem;margin-top:.8rem;box-shadow:var(--shadow);-webkit-backdrop-filter:blur(var(--blur,0px));backdrop-filter:blur(var(--blur,0px))}}
+.stat{padding:1.4rem}
+.stat strong{display:block;font-family:var(--font-h);font-weight:var(--h-weight);font-size:2.3rem;line-height:1;color:var(--accent-text,var(--accent));margin-bottom:.4rem}
+.stat span{color:var(--muted);font-size:.95rem}
+.card-p{overflow:hidden;display:flex;flex-direction:column;transition:transform .25s}
+.card-p:hover{transform:translateY(-4px)}
+.ph{position:relative;overflow:hidden;aspect-ratio:4/3}
+.ph img{width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;top:.8rem;left:.8rem;z-index:2;background:var(--tag-bg,var(--accent));color:var(--tag-ink,var(--accent-ink));padding:.25rem .75rem;border-radius:var(--r-btn);font-size:.8rem;font-weight:600}
+.cbody{padding:1.3rem;display:flex;flex-direction:column;flex:1}
+.price{font-family:var(--font-h);font-weight:var(--h-weight);font-size:1.5rem;color:var(--accent-text,var(--accent));margin:0}
+.ptitle{font-size:1.2rem;margin:.35rem 0 .3rem}
+.loc{color:var(--muted);font-size:.95rem;margin-bottom:.8rem}
+.meta{display:flex;flex-wrap:wrap;gap:.4rem 1rem;list-style:none;padding:0;margin:0 0 1.2rem;color:var(--muted);font-size:.9rem}
+.cbody .btn-alt{margin-top:auto;align-self:flex-start}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:2rem}
+.chip{border:var(--bw,1px) solid var(--chip-line,var(--line));background:var(--chip-bg,transparent);color:var(--ink);padding:.55rem 1.1rem;border-radius:var(--r-btn);box-shadow:var(--chip-shadow,none);font-weight:500}
+.chip.active{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.svc,.step{padding:1.6rem}
+.ibox{display:inline-grid;place-items:center;width:52px;height:52px;border-radius:var(--r-sm);background:var(--ibox-bg,var(--accent));color:var(--ibox-ink,var(--accent-ink));font-size:1.4rem;margin-bottom:1rem}
+.svc h3,.step h3{font-size:1.2rem;margin-bottom:.5rem}
+.svc p,.step p{color:var(--muted);margin:0}
+.step b{display:block;font-family:var(--font-h);font-size:2.2rem;line-height:1;color:var(--accent-text,var(--accent));margin-bottom:.8rem}
+.checks{list-style:none;padding:0;margin:1.5rem 0 2rem}
+.checks li{display:flex;gap:.8rem;margin-bottom:1rem}
+.checks i{color:var(--accent-text,var(--accent));font-size:1.3rem;line-height:1.5}
+.why-img{width:100%;aspect-ratio:1/1.05;object-fit:cover;border-radius:var(--r-img,var(--r));box-shadow:var(--shadow)}
+.tcard{padding:1.7rem;display:flex;flex-direction:column;gap:1rem}
+.stars{color:var(--star,#f5b301);letter-spacing:.1rem}
+.tcard p{margin:0}
+.who{display:flex;align-items:center;gap:.8rem;margin-top:auto}
+.who strong{display:block}
+.who span{color:var(--muted);font-size:.9rem}
+.avatar{width:52px;height:52px;border-radius:50%;object-fit:cover}
+.member img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:var(--r-img,var(--r));margin-bottom:.9rem}
+.member strong{display:block}
+.member span{color:var(--muted);font-size:.95rem}
+.cta-bg{color:#fff;overflow:hidden}
+.cta-bg .lead{color:#fff;opacity:.92}
+.cta-bg .info i{color:currentColor}
+.info{list-style:none;padding:0;margin:1.5rem 0}
+.info li{display:flex;gap:.8rem;margin-bottom:.9rem;align-items:flex-start}
+.info i{color:var(--accent-text,var(--accent));font-size:1.2rem;line-height:1.5}
+.socials{display:flex;gap:.6rem;flex-wrap:wrap}
+.soc{display:inline-grid;place-items:center;width:42px;height:42px;font-size:1.1rem;border-radius:var(--soc-r,50%);background:var(--soc-bg,var(--surface));color:var(--soc-ink,var(--ink));border:var(--bw,1px) solid var(--line);box-shadow:var(--soc-shadow,none);transition:.2s}
+.soc:hover{background:var(--accent);color:var(--accent-ink)}
+.form-ok{margin:1rem 0 0;color:var(--accent-text,var(--accent));font-weight:600}
+.mapwrap{overflow:hidden;border-radius:var(--r);box-shadow:var(--shadow);border:var(--bw,1px) solid var(--line);min-height:320px}
+.map{width:100%;height:100%;min-height:320px;border:0;display:block}
+.foot{padding:4rem 0 2rem;background:var(--foot-bg,transparent);color:var(--foot-ink,var(--ink));border-top:var(--foot-border,0)}
+.foot h4{font-size:1.05rem;margin-bottom:1rem}
+.foot ul{list-style:none;padding:0;margin:0}
+.foot li{margin-bottom:.5rem}
+.foot .info{margin:0}
+.foot a:hover{color:var(--accent-text,var(--accent))}
+.foot .soc{color:var(--soc-ink,var(--ink))}
+.foot .brand{display:flex}
+.foot .copy{border-top:1px solid var(--line);margin-top:2.5rem;padding-top:1.5rem;color:var(--muted);font-size:.9rem}
+.mwrap{position:relative;height:100%;min-height:260px}
+.mimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.btn-close{filter:var(--close-filter,none)}
+:focus-visible{outline:3px solid var(--focus,var(--accent));outline-offset:3px}
+@media(max-width:767.98px){.sec{padding:4rem 0}.poster-search{margin:-2rem 0 0}.floatcard{left:.8rem;bottom:.8rem}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+
+:root{--font-h:'Syne',sans-serif;--font-b:'Plus Jakarta Sans',sans-serif;--h-weight:800;--h-track:-.03em;
+--bg:#fff1f2;--ink:#2b1240;--muted:#58436e;--accent:#7c3aed;--accent-text:#6d28d9;--accent-ink:#fff;
+--surface:rgba(255,255,255,.5);--line:rgba(255,255,255,.85);--shadow:0 14px 44px rgba(124,58,237,.16);--blur:22px;
+--r:28px;--r-sm:16px;--r-btn:999px;--field-bg:rgba(255,255,255,.55);--field-line:rgba(124,58,237,.18);
+--nav-bg:rgba(255,255,255,.55);--nav-blur:20px;--menu-bg:rgba(255,255,255,.92);--modal-bg:rgba(255,255,255,.9);
+--tag-bg:rgba(43,18,64,.72);--tag-ink:#fff;--foot-bg:rgba(255,255,255,.4);--foot-border:1px solid rgba(255,255,255,.9);--focus:#7c3aed;--star:#e08a00;--chip-bg:rgba(255,255,255,.5)}
+body{background:radial-gradient(42rem 32rem at 0% 0%,#fda4af,transparent 60%),radial-gradient(42rem 36rem at 100% 8%,#c4b5fd,transparent 60%),radial-gradient(46rem 36rem at 60% 100%,rgba(252,211,77,.55),transparent 60%),#fff1f2;background-attachment:fixed}
+.h-display{font-size:clamp(2.3rem,5.4vw,4.3rem)}
+.nav-x.sticky-top{top:12px;width:min(1240px,calc(100% - 24px));margin:12px auto 0;border-radius:999px;padding:.5rem 0;border:1px solid rgba(255,255,255,.85);box-shadow:0 10px 36px rgba(124,58,237,.14)}
+@media(max-width:991.98px){.nav-x.sticky-top{border-radius:28px}}
+.btn-main{background:linear-gradient(135deg,#7c3aed,#db2777);box-shadow:0 10px 26px rgba(219,39,119,.28)}
+.chip.active{background:linear-gradient(135deg,#7c3aed,#db2777);border-color:transparent}
+.media{padding:12px;background:rgba(255,255,255,.45);border:1px solid #fff;border-radius:52px;-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);box-shadow:var(--shadow)}
+.media-img{border-radius:40px}
+.floatcard{left:-1rem;bottom:2.5rem;background:rgba(255,255,255,.7)}
+.search{border-radius:34px}
+.ibox{background:linear-gradient(135deg,#a78bfa,#f472b6)}
+.ph{border-radius:22px;margin:10px 10px 0}
+.hero-split::before,.sec-svc::before,.sec-team::before{content:"";position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;width:380px;height:380px;opacity:.55;z-index:0}
+.hero-split::before{background:#fbbf24;right:-80px;top:-60px}.sec-svc::before{background:#fb7185;left:-100px;top:0}.sec-team::before{background:#8b5cf6;right:-100px;top:10%}
+.sec>.container-xl{position:relative;z-index:1}
+.page-head .h-page{background:linear-gradient(135deg,#2b1240,#7c3aed 60%,#db2777);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat strong{color:#6d28d9}
+
+</style>
+</head>
+<body>
+<nav class="nav-x navbar navbar-expand-lg sticky-top" aria-label="Principal">
+<div class="container-xl">
+<a class="navbar-brand brand" href="#inicio"><i class="bi bi-gem"></i><span>Cristal Inmobiliaria</span></a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú"><i class="bi bi-list"></i></button>
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1"><li class="nav-item"><a class="nav-link navlink" href="#inicio">Inicio</a></li><li class="nav-item"><a class="nav-link navlink" href="#propiedades">Propiedades</a></li><li class="nav-item"><a class="nav-link navlink" href="#servicios">Servicios</a></li><li class="nav-item"><a class="nav-link navlink" href="#nosotros">Nosotros</a></li><li class="nav-item"><a class="nav-link navlink" href="#contacto">Contacto</a></li></ul>
+<a class="btn-main ms-lg-3 mt-3 mt-lg-0" href="#contacto">Contáctanos</a>
+</div></div></nav><main data-page="inicio"><header class="hero hero-split"><div class="container-xl hero-in">
+<div class="row align-items-center g-5">
+<div class="col-lg-6"><h1 class="h-display mb-4">Un hogar con luz propia</h1><p class="lead mb-4">Te acompañamos a encontrar, comprar o rentar la propiedad que se adapta a tu forma de vivir.</p><div class="d-flex flex-wrap gap-3"><a class="btn-main" href="#propiedades"><i class="bi bi-buildings"></i> Ver propiedades</a><a class="btn-alt" href="#contacto">Hablar con un asesor</a></div></div>
+<div class="col-lg-6"><div class="media"><img class="media-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=70" alt="Casa en venta" fetchpriority="high">
+<div class="floatcard"><i class="bi bi-patch-check-fill"></i><div><strong>Propiedades verificadas</strong><span>Documentación al día</span></div></div></div></div>
+</div>
+<div class="mt-5"><form class="search panel text-start" onsubmit="location.hash='#propiedades';return false" aria-label="Buscar propiedades">
+<div class="row g-3 align-items-end">
+<div class="col-6 col-md"><label class="lbl" for="sTipo">Tipo</label><select id="sTipo" class="field"><option>Casa</option><option>Departamento</option><option>Terreno</option><option>Local u oficina</option></select></div>
+<div class="col-6 col-md"><label class="lbl" for="sOp">Operación</label><select id="sOp" class="field"><option>Comprar</option><option>Rentar</option></select></div>
+<div class="col-6 col-md"><label class="lbl" for="sZona">Zona</label><select id="sZona" class="field"><option>Centro</option><option>Zona norte</option><option>Costa</option><option>Residencial</option></select></div>
+<div class="col-6 col-md"><label class="lbl" for="sPre">Presupuesto</label><select id="sPre" class="field"><option>Hasta $2M</option><option>$2M – $5M</option><option>Más de $5M</option></select></div>
+<div class="col-12 col-md-auto"><button class="btn-main w-100" type="submit"><i class="bi bi-search"></i> Buscar</button></div>
+</div></form></div></div></header><section class="sec sec-tight stats-sec"><div class="container-xl"><div class="tw-grid tw-grid-cols-2 lg:tw-grid-cols-4 tw-gap-4"><div class="stat"><strong>1,200+</strong><span>Propiedades vendidas</span></div><div class="stat"><strong>15</strong><span>Años de experiencia</span></div><div class="stat"><strong>98%</strong><span>Clientes satisfechos</span></div><div class="stat"><strong>40</strong><span>Asesores en tu zona</span></div></div></div></section><section class="sec sec-props"><div class="container-xl"><div class="sec-head"><h2 class="h-section">Propiedades destacadas</h2><p class="lead mb-0">Una selección de casas, departamentos y terrenos listos para visitar.</p></div><div class="row g-4"><div class="col-md-6 col-lg-4 prop" data-type="casa"><article class="card-p h-100">
+<div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=900&q=70" alt="Casa moderna con alberca"><span class="tag">Venta</span></div>
+<div class="cbody"><p class="price">$4,850,000</p><h3 class="ptitle">Casa moderna con alberca</h3>
+<p class="loc"><i class="bi bi-geo-alt"></i> Lomas Residencial</p><ul class="meta"><li><i class="bi bi-door-closed"></i> 4 rec</li><li><i class="bi bi-droplet"></i> 3 baños</li><li><i class="bi bi-rulers"></i> 320 m²</li></ul>
+<button type="button" class="btn-alt" data-bs-toggle="modal" data-bs-target="#propModal" data-title="Casa moderna con alberca" data-price="$4,850,000" data-loc="Lomas Residencial" data-img="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1000&q=70" data-meta="4 recámaras · 3 baños · 320 m²">Ver detalles</button></div></article></div><div class="col-md-6 col-lg-4 prop" data-type="departamento"><article class="card-p h-100">
+<div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=70" alt="Penthouse con vista panorámica"><span class="tag">Venta</span></div>
+<div class="cbody"><p class="price">$3,200,000</p><h3 class="ptitle">Penthouse con vista panorámica</h3>
+<p class="loc"><i class="bi bi-geo-alt"></i> Centro Ejecutivo</p><ul class="meta"><li><i class="bi bi-door-closed"></i> 3 rec</li><li><i class="bi bi-droplet"></i> 2 baños</li><li><i class="bi bi-rulers"></i> 180 m²</li></ul>
+<button type="button" class="btn-alt" data-bs-toggle="modal" data-bs-target="#propModal" data-title="Penthouse con vista panorámica" data-price="$3,200,000" data-loc="Centro Ejecutivo" data-img="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1000&q=70" data-meta="3 recámaras · 2 baños · 180 m²">Ver detalles</button></div></article></div><div class="col-md-6 col-lg-4 prop" data-type="casa"><article class="card-p h-100">
+<div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=900&q=70" alt="Villa mediterránea"><span class="tag">Venta</span></div>
+<div class="cbody"><p class="price">$7,900,000</p><h3 class="ptitle">Villa mediterránea</h3>
+<p class="loc"><i class="bi bi-geo-alt"></i> Costa Azul</p><ul class="meta"><li><i class="bi bi-door-closed"></i> 5 rec</li><li><i class="bi bi-droplet"></i> 4 baños</li><li><i class="bi bi-rulers"></i> 540 m²</li></ul>
+<button type="button" class="btn-alt" data-bs-toggle="modal" data-bs-target="#propModal" data-title="Villa mediterránea" data-price="$7,900,000" data-loc="Costa Azul" data-img="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1000&q=70" data-meta="5 recámaras · 4 baños · 540 m²">Ver detalles</button></div></article></div></div><div class="mt-5 text-center"><a class="btn-alt" href="#propiedades">Ver todo el catálogo</a></div></div></section><section class="sec sec-svc"><div class="container-xl"><div class="sec-head"><h2 class="h-section">Todo lo que necesitas para mudarte tranquilo</h2><p class="lead mb-0">Acompañamiento completo en cada etapa: buscar, negociar, firmar y recibir tus llaves.</p></div><div class="tw-grid tw-gap-6 sm:tw-grid-cols-2 lg:tw-grid-cols-4"><div class="svc"><span class="ibox"><i class="bi bi-house-door"></i></span><h3>Compra de propiedades</h3><p>Te mostramos opciones que encajan con tu presupuesto y te acompañamos hasta la firma.</p></div><div class="svc"><span class="ibox"><i class="bi bi-tag"></i></span><h3>Venta y valuación</h3><p>Valuamos tu inmueble con datos de mercado y lo promovemos con fotografía profesional.</p></div><div class="svc"><span class="ibox"><i class="bi bi-key"></i></span><h3>Renta administrada</h3><p>Buscamos inquilinos confiables y nos encargamos de contratos, cobros y mantenimiento.</p></div><div class="svc"><span class="ibox"><i class="bi bi-file-earmark-check"></i></span><h3>Asesoría legal y crédito</h3><p>Revisamos escrituras, trámites y opciones de financiamiento contigo.</p></div></div></div></section><section class="sec sec-banner"><div class="container-xl cta-in text-center"><h2 class="h-section tw-max-w-2xl tw-mx-auto">¿Quieres vender o rentar tu propiedad?</h2>
+<p class="lead mx-auto mb-4">Te damos una valuación gratuita y un plan de promoción en 48 horas.</p><a class="btn-main" href="#contacto">Solicitar valuación</a></div></section></main><main data-page="propiedades"><section class="page-head"><div class="container-xl cta-in"><h1 class="h-page">Propiedades</h1><p class="lead mb-0 mt-3">Explora casas, departamentos, terrenos y espacios comerciales disponibles.</p></div></section><section class="sec sec-props"><div class="container-xl"><div class="chips" role="group" aria-label="Filtrar por tipo"><button type="button" class="chip active" data-f="todas" aria-pressed="true">Todas</button><button type="button" class="chip" data-f="casa" aria-pressed="false">Casas</button><button type="button" class="chip" data-f="departamento" aria-pressed="false">Departamentos</button><button type="button" class="chip" data-f="terreno" aria-pressed="false">Terrenos</button><button type="button" class="chip" data-f="comercial" aria-pressed="false">Comercial</button></div><div class="row g-4" id="grid"><div class="col-md-6 col-lg-4 prop" data-type="casa"><article class="card-p h-100">
+<div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=900&q=70" alt="Casa moderna con alberca"><span class="tag">Venta</span></div>
+<div class="cbody"><p class="price">$4,850,000</p><h3 class="ptitle">Casa moderna con alberca</h3>
+<p class="loc"><i class="bi bi-geo-alt"></i> Lomas Residencial</p><ul class="meta"><li><i class="bi bi-door-closed"></i> 4 rec</li><li><i class="bi bi-droplet"></i> 3 baños</li><li><i class="bi bi-rulers"></i> 320 m²</li></ul>
+<button type="button" class="btn-alt" data-bs-toggle="modal" data-bs-target="#propModal" data-title="Casa moderna con alberca" data-price="$4,850,000" data-loc="Lomas Residencial" data-img="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1000&q=70" data-meta="4 recámaras · 3 baños · 320 m²">Ver detalles</button></div></article></div><div class="col-md-6 col-lg-4 prop" data-type="departamento"><article class="card-p h-100">
+<div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=70" alt="Penthouse con vista panorámica"><span class="tag">Venta</span></div>
+<div class="cbody"><p class="price">$3,200,000</p><h3 class="ptitle">Penthouse con vista panorámica</h3>
+<p class="loc"><i class="bi bi-geo-alt"></i> Centro Ejecutivo</p><ul class="meta"><li><i class="bi bi-door-closed"></i> 3 rec</li><li><i class="bi bi-droplet"></i> 2 baños</li><li><i class="bi bi-rulers"></i> 180 m²</li></ul>
+<button type="button" class="btn-alt" data-bs-toggle="modal" data-bs-target="#propModal" data-title="Penthouse con vista panorámica" data-price="$3,200,000" data-loc="Centro Ejecutivo" data-img="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1000&q=70" data-meta="3 recámaras · 2 baños · 180 m²">Ver detalles</button></div></article></div><div class="col-md-6 col-lg-4 prop" data-type="casa"><article class="card-p h-100">
+<div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=900&q=70" alt="Villa mediterránea"><span class="tag">Venta</span></div>
+<div class="cbody"><p class="price">$7,900,000</p><h3 class="ptitle">Villa mediterránea</h3>
+<p class="loc"><i class="bi bi-geo-alt"></i> Costa Azul</p><ul class="meta"><li><i class="bi bi-door-closed"></i> 5 rec</li><li><i class="bi bi-droplet"></i> 4 baños</li><li><i class="bi bi-rulers"></i> 540 m²</li></ul>
+<button type="button" class="btn-alt" data-bs-toggle="modal" data-bs-target="#propModal" data-title="Villa mediterránea" data-price="$7,900,000" data-loc="Costa Azul" data-img="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1000&q=70" data-meta="5 recámaras · 4 baños · 540 m²">Ver detalles</button></div></article></div><div class="col-md-6 col-lg-4 prop" data-type="departamento"><article class="card-p h-100">
+<div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=900&q=70" alt="Departamento urbano amueblado"><span class="tag">Renta</span></div>
+<div class="cbody"><p class="price">$18,500 /mes</p><h3 class="ptitle">Departamento urbano amueblado</h3>
+<p class="loc"><i class="bi bi-geo-alt"></i> Zona Norte</p><ul class="meta"><li><i class="bi bi-door-closed"></i> 2 rec</li><li><i class="bi bi-droplet"></i> 1 baños</li><li><i class="bi bi-rulers"></i> 85 m²</li></ul>
+<button type="button" class="btn-alt" data-bs-toggle="modal" data-bs-target="#propModal" data-title="Departamento urbano amueblado" data-price="$18,500 /mes" data-loc="Zona Norte" data-img="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1000&q=70" data-meta="2 recámaras · 1 baños · 85 m²">Ver detalles</button></div></article></div><div class="col-md-6 col-lg-4 prop" data-type="casa"><article class="card-p h-100">
+<div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=900&q=70" alt="Casa familiar con jardín"><span class="tag">Venta</span></div>
+<div class="cbody"><p class="price">$2,980,000</p><h3 class="ptitle">Casa familiar con jardín</h3>
+<p class="loc"><i class="bi bi-geo-alt"></i> Los Pinos</p><ul class="meta"><li><i class="bi bi-door-closed"></i> 3 rec</li><li><i class="bi bi-droplet"></i> 2 baños</li><li><i class="bi bi-rulers"></i> 210 m²</li></ul>
+<button type="button" class="btn-alt" data-bs-toggle="modal" data-bs-target="#propModal" data-title="Casa familiar con jardín" data-price="$2,980,000" data-loc="Los Pinos" data-img="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1000&q=70" data-meta="3 recámaras · 2 baños · 210 m²">Ver detalles</button></div></article></div><div class="col-md-6 col-lg-4 prop" data-type="terreno"><article class="card-p h-100">
+<div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=70" alt="Terreno residencial"><span class="tag">Venta</span></div>
+<div class="cbody"><p class="price">$890,000</p><h3 class="ptitle">Terreno residencial</h3>
+<p class="loc"><i class="bi bi-geo-alt"></i> Valle Verde</p><ul class="meta"><li><i class="bi bi-rulers"></i> 600 m²</li></ul>
+<button type="button" class="btn-alt" data-bs-toggle="modal" data-bs-target="#propModal" data-title="Terreno residencial" data-price="$890,000" data-loc="Valle Verde" data-img="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=70" data-meta="600 m²">Ver detalles</button></div></article></div><div class="col-md-6 col-lg-4 prop" data-type="comercial"><article class="card-p h-100">
+<div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=70" alt="Oficinas corporativas"><span class="tag">Renta</span></div>
+<div class="cbody"><p class="price">$32,000 /mes</p><h3 class="ptitle">Oficinas corporativas</h3>
+<p class="loc"><i class="bi bi-geo-alt"></i> Distrito Financiero</p><ul class="meta"><li><i class="bi bi-droplet"></i> 2 baños</li><li><i class="bi bi-rulers"></i> 240 m²</li></ul>
+<button type="button" class="btn-alt" data-bs-toggle="modal" data-bs-target="#propModal" data-title="Oficinas corporativas" data-price="$32,000 /mes" data-loc="Distrito Financiero" data-img="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=70" data-meta="2 baños · 240 m²">Ver detalles</button></div></article></div><div class="col-md-6 col-lg-4 prop" data-type="departamento"><article class="card-p h-100">
+<div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=900&q=70" alt="Loft de diseño industrial"><span class="tag">Venta</span></div>
+<div class="cbody"><p class="price">$2,150,000</p><h3 class="ptitle">Loft de diseño industrial</h3>
+<p class="loc"><i class="bi bi-geo-alt"></i> Barrio Creativo</p><ul class="meta"><li><i class="bi bi-door-closed"></i> 1 rec</li><li><i class="bi bi-droplet"></i> 1 baños</li><li><i class="bi bi-rulers"></i> 95 m²</li></ul>
+<button type="button" class="btn-alt" data-bs-toggle="modal" data-bs-target="#propModal" data-title="Loft de diseño industrial" data-price="$2,150,000" data-loc="Barrio Creativo" data-img="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1000&q=70" data-meta="1 recámaras · 1 baños · 95 m²">Ver detalles</button></div></article></div></div></div></section></main><main data-page="servicios"><section class="page-head"><div class="container-xl cta-in"><h1 class="h-page">Servicios</h1><p class="lead mb-0 mt-3">Compra, venta, renta y asesoría con un solo equipo.</p></div></section><section class="sec sec-svc"><div class="container-xl"><div class="sec-head"><h2 class="h-section">Todo lo que necesitas para mudarte tranquilo</h2><p class="lead mb-0">Acompañamiento completo en cada etapa: buscar, negociar, firmar y recibir tus llaves.</p></div><div class="tw-grid tw-gap-6 sm:tw-grid-cols-2 lg:tw-grid-cols-4"><div class="svc"><span class="ibox"><i class="bi bi-house-door"></i></span><h3>Compra de propiedades</h3><p>Te mostramos opciones que encajan con tu presupuesto y te acompañamos hasta la firma.</p></div><div class="svc"><span class="ibox"><i class="bi bi-tag"></i></span><h3>Venta y valuación</h3><p>Valuamos tu inmueble con datos de mercado y lo promovemos con fotografía profesional.</p></div><div class="svc"><span class="ibox"><i class="bi bi-key"></i></span><h3>Renta administrada</h3><p>Buscamos inquilinos confiables y nos encargamos de contratos, cobros y mantenimiento.</p></div><div class="svc"><span class="ibox"><i class="bi bi-file-earmark-check"></i></span><h3>Asesoría legal y crédito</h3><p>Revisamos escrituras, trámites y opciones de financiamiento contigo.</p></div></div></div></section><section class="sec sec-steps"><div class="container-xl"><div class="sec-head"><h2 class="h-section">Así trabajamos</h2><p class="lead mb-0">Un proceso en cuatro pasos, sin trámites innecesarios.</p></div><div class="tw-grid tw-gap-6 sm:tw-grid-cols-2 lg:tw-grid-cols-4"><div class="step"><b>1</b><h3>Conversamos</h3><p>Nos cuentas qué buscas, tu presupuesto y tus tiempos.</p></div><div class="step"><b>2</b><h3>Seleccionamos</h3><p>Preparamos una lista corta de propiedades verificadas.</p></div><div class="step"><b>3</b><h3>Visitamos</h3><p>Agendamos recorridos y resolvemos tus dudas.</p></div><div class="step"><b>4</b><h3>Cerramos</h3><p>Gestionamos documentos, notaría y entrega de llaves.</p></div></div></div></section></main><main data-page="nosotros"><section class="page-head"><div class="container-xl cta-in"><h1 class="h-page">Nosotros</h1><p class="lead mb-0 mt-3">Una inmobiliaria independiente con enfoque en trato claro y resultados.</p></div></section><section class="sec sec-why"><div class="container-xl"><div class="row align-items-center g-5">
+<div class="col-lg-6 order-lg-2"><img class="why-img" loading="lazy" src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=1200&q=70" alt="Asesor mostrando una propiedad"></div>
+<div class="col-lg-6"><h2 class="h-section">Quiénes somos</h2><p class="lead">Llevamos más de quince años ayudando a familias y empresas a tomar buenas decisiones inmobiliarias.</p>
+<ul class="checks"><li><i class="bi bi-check-circle-fill"></i><div><strong>Propiedades verificadas</strong><br><span class="muted">Revisamos documentos y estado físico antes de publicar.</span></div></li><li><i class="bi bi-check-circle-fill"></i><div><strong>Un asesor para ti</strong><br><span class="muted">Una sola persona te atiende de principio a fin.</span></div></li><li><i class="bi bi-check-circle-fill"></i><div><strong>Precios transparentes</strong><br><span class="muted">Sin comisiones ocultas ni sorpresas al cierre.</span></div></li></ul><a class="btn-main" href="#contacto">Conocer al equipo</a></div></div></div></section><section class="sec sec-team"><div class="container-xl"><div class="sec-head"><h2 class="h-section">Nuestro equipo</h2><p class="lead mb-0">Personas reales que conocen la zona y te acompañan en cada visita.</p></div><div class="tw-grid tw-grid-cols-2 lg:tw-grid-cols-4 tw-gap-6"><div class="member"><img loading="lazy" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=70" alt="Andrea Molina"><strong>Andrea Molina</strong><span>Dirección</span></div><div class="member"><img loading="lazy" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=70" alt="Luis Cabrera"><strong>Luis Cabrera</strong><span>Asesor de ventas</span></div><div class="member"><img loading="lazy" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=70" alt="Daniela Ortiz"><strong>Daniela Ortiz</strong><span>Asesora de rentas</span></div><div class="member"><img loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=70" alt="Jorge Navarro"><strong>Jorge Navarro</strong><span>Asesor legal</span></div></div></div></section></main><main data-page="contacto"><section class="page-head"><div class="container-xl cta-in"><h1 class="h-page">Contacto</h1><p class="lead mb-0 mt-3">Cuéntanos qué necesitas y te respondemos en menos de 24 horas.</p></div></section><section class="sec sec-cta"><div class="container-xl"><div class="row g-5">
+<div class="col-lg-7"><form class="contact panel"><h3 class="mb-3 fs-4">Cuéntanos qué buscas</h3><div class="row g-3">
+<div class="col-md-6"><label class="lbl" for="fn">Nombre</label><input id="fn" class="field" required autocomplete="name" placeholder="Tu nombre"></div>
+<div class="col-md-6"><label class="lbl" for="ft">Teléfono</label><input id="ft" type="tel" class="field" autocomplete="tel" placeholder="55 0000 0000"></div>
+<div class="col-12"><label class="lbl" for="fe">Correo</label><input id="fe" type="email" class="field" required autocomplete="email" placeholder="tu@correo.com"></div>
+<div class="col-12"><label class="lbl" for="fm">Mensaje</label><textarea id="fm" class="field" rows="4" placeholder="Zona, presupuesto, tipo de propiedad..."></textarea></div>
+<div class="col-12"><button class="btn-main" type="submit"><i class="bi bi-send"></i> Enviar mensaje</button><p class="form-ok" role="status" hidden>¡Gracias! Un asesor te contactará pronto.</p></div></div></form></div>
+<div class="col-lg-5"><h2 class="h-section">Visítanos o escríbenos</h2><ul class="info"><li><i class="bi bi-telephone"></i><span>+52 55 1234 5678</span></li><li><i class="bi bi-envelope"></i><span>hola@ejemplo.com</span></li><li><i class="bi bi-geo-alt"></i><span>Av. Principal 123, Ciudad</span></li><li><i class="bi bi-clock"></i><span>Lun a sáb, 9:00 – 19:00</span></li></ul><div class="socials"><a class="soc" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a class="soc" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a class="soc" href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a><a class="soc" href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a><a class="soc" href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a><a class="soc" href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a></div>
+<div class="mapwrap mt-4"><iframe class="map" title="Mapa de ubicación" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-99.20%2C19.38%2C-99.10%2C19.46&amp;layer=mapnik"></iframe></div></div></div></div></section></main><footer class="foot"><div class="container-xl"><div class="tw-grid tw-gap-10 sm:tw-grid-cols-2 lg:tw-grid-cols-4">
+<div><a class="brand mb-3" href="#inicio"><i class="bi bi-gem"></i><span>Cristal Inmobiliaria</span></a><p class="muted">Bienes raíces para comprar, vender y rentar con confianza.</p><div class="socials"><a class="soc" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a class="soc" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a class="soc" href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a><a class="soc" href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a><a class="soc" href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a><a class="soc" href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a></div></div>
+<div><h4>Navegación</h4><ul><li><a href="#inicio">Inicio</a></li><li><a href="#propiedades">Propiedades</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#nosotros">Nosotros</a></li><li><a href="#contacto">Contacto</a></li></ul></div>
+<div><h4>Propiedades</h4><ul><li><a href="#propiedades">Casas</a></li><li><a href="#propiedades">Departamentos</a></li><li><a href="#propiedades">Terrenos</a></li><li><a href="#propiedades">Oficinas y locales</a></li></ul></div>
+<div><h4>Contacto</h4><ul class="info"><li><i class="bi bi-telephone"></i><span>+52 55 1234 5678</span></li><li><i class="bi bi-envelope"></i><span>hola@ejemplo.com</span></li><li><i class="bi bi-geo-alt"></i><span>Av. Principal 123, Ciudad</span></li><li><i class="bi bi-clock"></i><span>Lun a sáb, 9:00 – 19:00</span></li></ul></div></div>
+<div class="copy">© 2026 Cristal Inmobiliaria. Sitio de demostración con contenido genérico.</div></div></footer>
+<div class="modal fade" id="propModal" tabindex="-1" aria-labelledby="mTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content"><div class="row g-0">
+<div class="col-md-6"><div class="mwrap"><img id="mImg" class="mimg" alt="" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></div></div>
+<div class="col-md-6 p-4 p-lg-5 d-flex flex-column"><button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+<p class="price mt-2" id="mPrice"></p><h3 id="mTitle" class="mb-2"></h3><p class="loc" id="mLoc"></p><p class="muted" id="mMeta"></p>
+<p class="muted">Propiedad con excelente ubicación, acabados de calidad y documentación lista para escriturar. Agenda una visita para conocerla.</p>
+<a class="btn-main mt-auto align-self-start" href="#contacto" data-bs-dismiss="modal">Agendar visita</a></div></div></div></div></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+addEventListener('error',function(e){var t=e.target;if(t&&t.tagName==='IMG'&&!t.dataset.fb&&t.id!=='mImg'){t.dataset.fb=1;t.src='https://picsum.photos/seed/'+encodeURIComponent((t.alt||'casa').slice(0,24))+'/900/600'}},true);
+(function(){
+var menu=document.getElementById('menu'),ic=document.querySelector('.navbar-toggler i');
+if(menu){menu.addEventListener('show.bs.collapse',function(){ic.className='bi bi-x-lg'});menu.addEventListener('hide.bs.collapse',function(){ic.className='bi bi-list'});
+menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){if(menu.classList.contains('show'))bootstrap.Collapse.getOrCreateInstance(menu,{toggle:false}).hide()})})}
+document.querySelectorAll('.chip').forEach(function(c){c.addEventListener('click',function(){
+document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('active');x.setAttribute('aria-pressed','false')});
+c.classList.add('active');c.setAttribute('aria-pressed','true');var f=c.dataset.f;
+document.querySelectorAll('#grid .prop').forEach(function(p){p.classList.toggle('d-none',f!=='todas'&&p.dataset.type!==f)})})});
+var pm=document.getElementById('propModal');
+if(pm){pm.addEventListener('show.bs.modal',function(e){var d=e.relatedTarget.dataset;
+document.getElementById('mTitle').textContent=d.title;document.getElementById('mPrice').textContent=d.price;
+document.getElementById('mLoc').innerHTML='<i class="bi bi-geo-alt"></i> '+d.loc;document.getElementById('mMeta').textContent=d.meta;
+var im=document.getElementById('mImg');im.src=d.img;im.alt=d.title})}
+document.querySelectorAll('form.contact').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();f.querySelector('.form-ok').hidden=false;f.reset()})});
+})();
+
+(function(){
+var pages=[].slice.call(document.querySelectorAll('[data-page]'));
+function route(){var h=(location.hash||'#inicio').slice(1);if(!pages.some(function(p){return p.dataset.page===h}))h='inicio';
+pages.forEach(function(p){p.hidden=p.dataset.page!==h});
+document.querySelectorAll('.navlink').forEach(function(a){var on=a.getAttribute('href')==='#'+h;a.classList.toggle('active',on);if(on)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+document.title=document.title.split(' | ')[0]+' | '+h.charAt(0).toUpperCase()+h.slice(1);
+window.scrollTo(0,0)}
+addEventListener('hashchange',route);route();
+})();
+</script>
+</body>
+</html>
